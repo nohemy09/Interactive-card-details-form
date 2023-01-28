@@ -14,172 +14,59 @@
   </head>
   <body>
     <main>
-      <section>
-        <div></div>
+      <section class="section">
         <div class="card">
           <div class="card__first">
-            <div class="card__first--circulos">
-              <span aria-hidden="true" class="circulo1"></span>
-              <span aria-hidden="true" class="circulo2"></span>
-            </div>
-            <div class="card__first--text">
-              <p class="card__first--number">
-                0000&nbsp;0000&nbsp;0000&nbsp;0000
-              </p>
-              <div class="card__first--texto-completo">
-                <p aria-label="Placeholder Name">Alicia Valladares</p>
-                <div aria-label="Fecha de expiracion">
-                  <p>00</p>
-                  <p>&#47;</p>
-                  <p>00</p>
-                </div>
-              </div>
-            </div>
+            <img src="./assets/images/bg-card-front.png" alt="Card front" class="card__first__img">
+            <img src="./assets/images/card-logo.svg" alt="Card logo" class="card__first__logo">
+            <p class="card__first__number">0000 0000 0000</p>
+            <p class="card__first__nombre">Jane Appleseed</p>
+            <p class="card__first__month">00</p>
+            <p class="card__first__pleca">/</p>
+            <p class="card__first__exp">00</p>
           </div>
+          
+        <div class="card__back">
 
-          <div class="card__back">
-            <p class="card__back--cvc" aria-label="Numero CVC">
-              000
-            </p>
+          <img src="./assets/images/bg-card-back.png" alt="Card back" class="card__back__img">
+          <p class="card__back__cvc">000</p>
+
           </div>
+    
         </div>
 
-        <div class="form-section">
-          <form class="form">
-            <div class="form__item">
-              <label for="name">Cardholder name</label>
-              <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Alicia Valladares"
-              pattern="[a-zA-Z]{2,20} [a-zA-Z\s-]{3,20}"
-              autocomplete="on"
-              required
-              >
-              <p class="form__item--warning" aria-hidden="true">
-                Letters only
-              </p>
+      </section>
+
+      <section>
+        <form class="form">
+          <label for="cardholer-name" class="form__cardholder"> Cardholder Name</label>
+          <input type="text" id="cardholder" placeholder="e.g 1234 5678 9123 0000">
+          <p class="wrong" id="errorcard"></p>
+
+          <div class="card__container">
+            <div class="card__container__exp">
+              <label for="fecha-expiracion" class="card__container__datex">Exp. Date (MM/YY)</label>
+              <input type="text" class="card__container__input" placeholder="MM">
+              <input type="text" class="card__container__input" placeholder="YY">
+              <p class="wrong" id="error-exp"></p>
+
             </div>
 
-            <div class="form__item">
-              <label for="number">Card Number</label>
-              <input
-              type="number"
-              name="number"
-              id="number"
-              placeholder="0000 0000 0000 0000"
-              pattern="[0-9]{16}"
-              autocomplete="on"
-              required
-              >
-              <p class="form__item--warning" aria-hidden="true">
-                Numbers Only
-              </p>
+            <div class="card__container__cvc">
+              <label for="cvc" class="card__container__number">CVC</label>
+              <input id="cvc" type="text" class="card__container__btncvc" placeholder="e.g 123">
+              <p class="wrong" id="error-cvc"></p>
             </div>
-
-            <div class="form__inline">
-              <div class="form__inline__wrap">
-                <label for="date">Exp. fecha (mm/yy)</label>
-                <div class="form__inline--inputs">
-                  <input
-                  type="tel"
-                  name="month"
-                  id="fecha"
-                  placeholder="MM"
-                  pattern="(0[1-9]|1[0-2])"
-                  autocomplete="on"
-                  title="Enter properly your credit card expiration month from 01 to 12"
-                  required
-                  >
-
-                <datalist name="month-list" id="month-list">
-                  <option value="01">January</option>
-                  <option value="02">February</option>
-                  <option value="03">March</option>
-                  <option value="04">April</option>
-                  <option value="05">May</option>
-                  <option value="06">June</option>
-                  <option value="07">July</option>
-                  <option value="08">August</option>
-                  <option value="09">September</option>
-                  <option value="10">October</option>
-                  <option value="11">November</option>
-                  <option value="12">December</option>
-                </datalist>
-
-                  <input 
-                  type="tel"
-                  name="year"
-                  id="date"
-                  placeholder="YY"
-                  pattern="(2[3-9]|3[0-3])"
-                  autocomplete="on"
-                  title="Enter properly your credit card expiration year from 23 to 33"
-                  required
-                  >
-                <datalist name="year-list" id="year-list">
-                  <option value="23">2023</option>
-                  <option value="24">2024</option>
-                  <option value="25">2025</option>
-                  <option value="26">2026</option>
-                  <option value="27">2027</option>
-                  <option value="28">2028</option>
-                  <option value="29">2029</option>
-                  <option value="30">2030</option>
-                  <option value="31">2031</option>
-                  <option value="32">2032</option>
-                  <option value="33">2033</option>
-                </datalist>
-                </div>
-                <p class="form__item--warning" aria-hidden="true">Numbers Only</p>
-              </div>
-
-              <div class="form__inline__wrap form__item">
-                <label for="cvc">CVC</label>
-                <input
-                type="tel"
-                name="cvc"
-                id="cvc"
-                placeholder="XXX"
-                pattern="[0-9]{3}"
-                autocomplete="on"
-                title="Enter 3 characters CVC number from the back of the credit card."
-                required
-                >
-                <p class="form__item--warning" aria-hidden="true">
-                  Numbers Only
-                </p>
-              </div>
-            </div>
-
-            <button type="submit" class="btn btn--confirm">Confirm</button>
-          </form>
-        </div>
-
-        <div class="section-confirmation">
-          <div class="confirmacion">
-            <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="40" fill="url(#a)" />
-              <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
-              <defs>
-                <linearGradient
-                  id="a"
-                  x1="-23.014"
-                  y1="11.507"
-                  x2="0"
-                  y2="91.507"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#6348FE" />
-                  <stop offset="1" stop-color="#610595" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <h2 class="confirmation--header">thank you!</h2>
-            <p class="confirmation--text">We've added your card details</p>
-            <button class="btn btn--confirm confirmation--btn" data-continue-btn>Continue</button>
           </div>
+          <button type="submit">Confirm</button>
+        </form>
+
+        <div class="thanks">
+          <img src="./assets/images/icon-complete.svg" alt="Icon-complete">
+          <h1>Thank You!</h1>
+          <p>We've added your card details</p>
+          <button>Continue</button>
+
         </div>
       </section>
     </main>
