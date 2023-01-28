@@ -2,15 +2,189 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.google.com/specimen/Space+Grotesk" rel="stylesheet">
+
+    <!--Mis estilos-->
+    <link rel="stylesheet" href="./assets/styles/style.scss">
+
+    <title>Interactive Card Details Form</title>
   </head>
   <body>
-    <header>
-      <h1>hola mundo</h1>
-    </header>
-    <div id="app"></div>
-    <script type="module" src="./JS/main.js"></script>
+    <main>
+      <section>
+        <div></div>
+        <div class="card">
+          <div class="card__first">
+            <div class="card__first--circulos">
+              <span aria-hidden="true" class="circulo1"></span>
+              <span aria-hidden="true" class="circulo2"></span>
+            </div>
+            <div class="card__first--text">
+              <p class="card__first--number">
+                0000&nbsp;0000&nbsp;0000&nbsp;0000
+              </p>
+              <div class="card__first--texto-completo">
+                <p aria-label="Placeholder Name">Alicia Valladares</p>
+                <div aria-label="Fecha de expiracion">
+                  <p>00</p>
+                  <p>&#47;</p>
+                  <p>00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card__back">
+            <p class="card__back--cvc" aria-label="Numero CVC">
+              000
+            </p>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <form class="form">
+            <div class="form__item">
+              <label for="name">Cardholder name</label>
+              <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Alicia Valladares"
+              pattern="[a-zA-Z]{2,20} [a-zA-Z\s-]{3,20}"
+              autocomplete="on"
+              required
+              >
+              <p class="form__item--warning" aria-hidden="true">
+                Letters only
+              </p>
+            </div>
+
+            <div class="form__item">
+              <label for="number">Card Number</label>
+              <input
+              type="number"
+              name="number"
+              id="number"
+              placeholder="0000 0000 0000 0000"
+              pattern="[0-9]{16}"
+              autocomplete="on"
+              required
+              >
+              <p class="form__item--warning" aria-hidden="true">
+                Numbers Only
+              </p>
+            </div>
+
+            <div class="form__inline">
+              <div class="form__inline__wrap">
+                <label for="date">Exp. fecha (mm/yy)</label>
+                <div class="form__inline--inputs">
+                  <input
+                  type="tel"
+                  name="month"
+                  id="fecha"
+                  placeholder="MM"
+                  pattern="(0[1-9]|1[0-2])"
+                  autocomplete="on"
+                  title="Enter properly your credit card expiration month from 01 to 12"
+                  required
+                  >
+
+                <datalist name="month-list" id="month-list">
+                  <option value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03">March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </datalist>
+
+                  <input 
+                  type="tel"
+                  name="year"
+                  id="date"
+                  placeholder="YY"
+                  pattern="(2[3-9]|3[0-3])"
+                  autocomplete="on"
+                  title="Enter properly your credit card expiration year from 23 to 33"
+                  required
+                  >
+                <datalist name="year-list" id="year-list">
+                  <option value="23">2023</option>
+                  <option value="24">2024</option>
+                  <option value="25">2025</option>
+                  <option value="26">2026</option>
+                  <option value="27">2027</option>
+                  <option value="28">2028</option>
+                  <option value="29">2029</option>
+                  <option value="30">2030</option>
+                  <option value="31">2031</option>
+                  <option value="32">2032</option>
+                  <option value="33">2033</option>
+                </datalist>
+                </div>
+                <p class="form__item--warning" aria-hidden="true">Numbers Only</p>
+              </div>
+
+              <div class="form__inline__wrap form__item">
+                <label for="cvc">CVC</label>
+                <input
+                type="tel"
+                name="cvc"
+                id="cvc"
+                placeholder="XXX"
+                pattern="[0-9]{3}"
+                autocomplete="on"
+                title="Enter 3 characters CVC number from the back of the credit card."
+                required
+                >
+                <p class="form__item--warning" aria-hidden="true">
+                  Numbers Only
+                </p>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--confirm">Confirm</button>
+          </form>
+        </div>
+
+        <div class="section-confirmation">
+          <div class="confirmacion">
+            <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="40" fill="url(#a)" />
+              <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
+              <defs>
+                <linearGradient
+                  id="a"
+                  x1="-23.014"
+                  y1="11.507"
+                  x2="0"
+                  y2="91.507"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#6348FE" />
+                  <stop offset="1" stop-color="#610595" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <h2 class="confirmation--header">thank you!</h2>
+            <p class="confirmation--text">We've added your card details</p>
+            <button class="btn btn--confirm confirmation--btn" data-continue-btn>Continue</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Javascript-->
+    <script src="./JS/main.js"></script>
   </body>
 </html>
