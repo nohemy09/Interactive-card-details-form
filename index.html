@@ -13,13 +13,13 @@
     <title>Interactive Card Details Form</title>
   </head>
   <body>
-    <main>
+    <main id="main">
       <section class="section">
         <div class="card">
           <div class="card__first">
             <img src="./assets/images/bg-card-front.png" alt="Card front" class="card__first__img">
             <img src="./assets/images/card-logo.svg" alt="Card logo" class="card__first__logo">
-            <p class="card__first__number">0000 0000 0000</p>
+            <p class="card__first__number">0000 0000 0000 0000</p>
             <p class="card__first__nombre">Jane Appleseed</p>
             <p class="card__first__month">00</p>
             <p class="card__first__pleca">/</p>
@@ -39,26 +39,30 @@
 
       <section>
         <form class="form">
-          <label for="cardholer-name" class="form__cardholder"> Cardholder Name</label>
-          <input type="text" id="cardholder" placeholder="e.g 1234 5678 9123 0000">
-          <p class="wrong" id="errorcard"></p>
+          <label for="cardholder-name" class="form__cardholder"> Cardholder Name</label>
+          <input type="text" id="cardholder" class="form__cardholder__input" placeholder=" e.g. Jane Appleseed" required>
+          <p class="wrong" id="error-card"></p>
 
-          <div class="card__container">
-            <div class="card__container__exp">
-              <label for="fecha-expiracion" class="card__container__datex">Exp. Date (MM/YY)</label>
-              <input type="text" class="card__container__input" placeholder="MM">
-              <input type="text" class="card__container__input" placeholder="YY">
+          <label for="cardnumber" class="form__cardholder__number">Card Number</label>
+          <input type="text" class="form__cardholder__input" placeholder="e.g. 1234 5678 9123 0000" required>
+          <p class="wrong" id="error-numero"></p>
+
+          <div class="form__container">
+            <div class="form__container__exp">
+              <label for="fecha-expiracion" class="form__container__datex">Exp. Date (MM/YY)</label>
+              <div id="inputs">
+                <input type="text" class="form__container__input" placeholder="MM" required>
+                <input type="text" class="form__container__input" placeholder="YY" required>
+              </div>
               <p class="wrong" id="error-exp"></p>
-
             </div>
-
-            <div class="card__container__cvc">
-              <label for="cvc" class="card__container__number">CVC</label>
-              <input id="cvc" type="text" class="card__container__btncvc" placeholder="e.g 123">
+            <div class="form__container__cvc">
+              <label for="cvc" class="form__container__datex">CVC</label>
+              <input id="cvc" type="text" class="form__container__btncvc" placeholder="e.g 123" required>
               <p class="wrong" id="error-cvc"></p>
             </div>
           </div>
-          <button type="submit">Confirm</button>
+          <button type="submit" class="btn">Confirm</button>
         </form>
 
         <div class="thanks">
