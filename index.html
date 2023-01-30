@@ -39,39 +39,33 @@
       <section>
         <form class="form" id="forma">
           <label for="cardholder-name" class="form__cardholder"> Cardholder Name</label>
-          <input type="text" id="cardholder" class="form__cardholder__input" placeholder=" e.g. Jane Appleseed" required>
+          <input type="text" id="cardholder" class="form__cardholder__input" placeholder=" e.g. Jane Appleseed" oninput="inputcardholder()" required>
           <p class="wrong" id="error-card"></p>
 
           <label for="cardnumber" class="form__cardholder__number">Card Number</label>
-          <input type="text" class="form__cardholder__input" placeholder="e.g. 1234 5678 9123 0000" id="cardnumber" required>
+          <input type="text" class="form__cardholder__input" placeholder="e.g. 1234 5678 9123 0000" id="cardnumber" required oninput="inputcardnumber()">
           <p class="wrong" id="error-numero"></p>
 
           <div class="form__container">
             <div class="form__container__exp">
               <label for="fecha-expiracion" class="form__container__datex">Exp. Date (MM/YY)</label>
               <div id="inputs">
-                <input type="text" class="form__container__input" id="expm" placeholder="MM" required>
+                <input type="text" class="form__container__input" id="expm" placeholder="MM" oninput="inputmm()" required>
                 <input type="text" class="form__container__input" id="expy"
-                placeholder="YY" required>
+                placeholder="YY" oninput="inputyy()" required>
               </div>
               <p class="wrong" id="error-exp"></p>
             </div>
             <div class="form__container__cvc">
               <label for="cvc" class="form__container__datex">CVC</label>
-              <input id="cvc" type="text" class="form__container__btncvc" placeholder="e.g 123" required>
+              <input id="cvc" type="text" class="form__container__btncvc" placeholder="e.g 123" oninput="inputcvc()" required>
               <p class="wrong" id="error-cvc"></p>
             </div>
           </div>
           <button type="submit" class="btn">Confirm</button>
         </form>
 
-        <div class="thanks">
-          <img src="./assets/images/icon-complete.svg" alt="Icon-complete">
-          <h1>Thank You!</h1>
-          <p>We've added your card details</p>
-          <button>Continue</button>
-
-        </div>
+        
       </section>
     </main>
 
